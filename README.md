@@ -51,11 +51,11 @@ git clone https://github.com/yourusername/cmps-6730-nlp-project.git
 cd cmps-6730-nlp-project
 pip install -r requirements.txt
 
-Also, write in your OpenAI key in the 'plato_online_matcher.py' file.
+### OpenAI Key
+Put in your OpenAI key at the top of the 'plato_online_matcher.py' file.
 
 ### Running the Application
-python flask.py
-Navigate to http://127.0.0.1:5000/ in your web browser
+python flask.py and navigate to http://127.0.0.1:5000/ in your web browser
 
 ### Example Usage:
 Question:
