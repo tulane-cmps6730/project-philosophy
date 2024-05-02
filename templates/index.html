@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Plato Dialogue Text Matcher</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 40px;
+            padding: 20px;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px #ccc;
+        }
+        input[type="text"], button {
+            padding: 10px;
+            margin-top: 10px;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            display: block;
+            width: 100%;
+        }
+        button {
+            background-color: #0056b3;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #004494;
+        }
+        label {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Philosopher Matcher</h1>
+    <p>Describe, in a paragraph or two, some themes that you are interested in exploring, and we'll find a passage from Plato's work that explores those themes. </p>
+    <form action="/match" method="post">
+        <label for="user_input">Your Input:</label>
+        <input type="text" id="user_input" name="user_input" placeholder="Enter your thoughts...">
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
