@@ -11,6 +11,8 @@ from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 import openai
 
+api_key = "PUT IN YOUR OPENAI KEY HERE";
+
 def split_string(s, num_parts):
     n = len(s)
     part_length = n // num_parts
@@ -143,28 +145,8 @@ def preprocess_and_vectorize(input_text, lda_model, dictionary, w2v_model):
     # Compute the average vector for these words
     return get_average_vector(words, w2v_model)
 
-# Example usage
-#user_input = input("Enter your text: ")
-#user_vector = preprocess_and_vectorize(user_input, lda_model, dictionary, VecModel)
-
-# Comparing user input vector to topic vectors
-#similarities = {}
-#for topic_id, words in topics_dict.items():
- #   topic_vector = get_average_vector(words, VecModel)
-  #  similarity_score = calculate_similarity(user_vector, topic_vector)
-   # similarities[topic_id] = similarity_score
-
-#list_of_ids = []
-# Display the similarities
-# Display the top 5 similarities
-#sorted_similarities = sorted(similarities.items(), key=lambda x: x[1], reverse=True)
-#for topic_id, score in sorted_similarities[:3]:  # Limit to top 5
-    #print(f"Topic {topic_id} similarity: {score:.4f}")
- #   list_of_ids.append(topic_id)
-
-#print(list_of_ids)
 portions_of_text = split_string(Plato_Texts, 500)
-#print(portions_of_text[list_of_ids[0]])
+
 
 
 def summarize_text(text, user_input):
@@ -194,13 +176,6 @@ def cite_text(text):
         presence_penalty=0.0
     )
     return response.choices[0].text.strip()
-
-
-# Example usage:
-api_key = "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";
-#important_text = portions_of_text[list_of_ids[0]]  # from your earlier code where you find the most relevant text section
-
-
 
 def process_input(user_input):
     user_vector = preprocess_and_vectorize(user_input, lda_model, dictionary, VecModel)
